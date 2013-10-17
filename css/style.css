@@ -1,0 +1,44 @@
+.clear {
+  clear:both;
+}
+
+h1 {
+  font-size: 120px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -2px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+p.subtitle {
+  font-size: 40px;
+  line-height: 1.25;
+  font-weight: 200;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  display: block;
+  margin: auto;
+}
+
+.wrapper {
+  float: right;
+  right: 50%;
+  position: relative;
+}
+
+.todos {
+  float: right;
+  right: -50%;
+  position: relative;
+}
+
+.todos li {
+  margin: 10px 0 0 10px;
+  width: 330px;
+  border: 1px solid black;
+}
