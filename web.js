@@ -20,11 +20,16 @@ if(process.env.REDISTOGO_URL) {
 }
 
 app.get('/todos.json', function(req, res){
-  res.send([{message:'Loaded'}]);
+  redis.lrange('todos', 0, -1, function(err, reply){
+    res.send(reply);
+  });
 });
 
 app.post('/todo/new', function(req, res){
-  console.log(req.body.todo);
+  redis.rpush('todos', req.body.todo);
+  redis.bgsave();
+  res.send(200);
+  res.end();
 });
 
 var port = process.env.PORT || 3000;

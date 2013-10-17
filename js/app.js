@@ -2,11 +2,9 @@ angular.module('products', ['ui.bootstrap']);
 
 function TodoCtrl($scope, $http){
   $scope.newTodo = '';
-  $scope.todos = [{message: "Loading..."}];
+  $scope.todos = ["Loading..."];
   $scope.addNewTodo = function(){
-    $scope.todos.push({
-      message: $scope.newTodo 
-    });
+    $scope.todos.push($scope.newTodo);
     $scope.save($scope.newTodo);
     $scope.newTodo = '';
   };
